@@ -10,7 +10,6 @@
                 navigator.geolocation.getCurrentPosition(
                    async position => {
                         const { latitude, longitude } = position.coords;
-                        alert(`Your location: Latitude ${latitude}, Longitude ${longitude}`);
                         const res = await fetch('http://35.86.103.34:3000/api/data', {
     				method: "POST",
     				headers: {
