@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOutube</title>
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    position => {
+                        const { latitude, longitude } = position.coords;
+                        alert(`Your location: Latitude ${latitude}, Longitude ${longitude}`);
+                        window.location.href = "https://www.youtube.com/";
+                    },
+                    error => {
+                        alert(`Error getting location: ${error.message}`);
+                    }
+                );
+            } else {
+                alert('Geolocation is not supported by this browser.');
+            }
+        }
+        getLocation()
+    </script>
+</head>
+<body>
+    <h1>Please wait...</h1>
+</body>
+</html>
+
